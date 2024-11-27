@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Animation</title>
+    <style>
+        .loading-text {
+            font-size: 10rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #333;
+        }
+
+        #identity {
+            font-size: 10rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #333;
+        }
+
+        #exp {
+            font-size: 10rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-text" id="loadingText">Loading</div>
+    <div id="identity">loading</div>
+    <div id="exp">LOADING</div>
+
+    <script>
+        let dots = 0;
+        const loadingText = document.getElementById('loadingText');
+
+        setInterval(function () {
+            if (dots < 4) {
+                loadingText.textContent = loadingText.textContent + '.';
+                dots++;
+            } else {
+                loadingText.textContent = 'Loading';
+                dots = 0;
+            }
+        }, 500);
+
+        const iden = document.getElementById('identity');
+        let a = 0;
+
+        setInterval(() => {
+
+            if (a < 4) {
+                identity.textContent = identity.textContent + '.';
+                a++;
+            }
+
+            else {
+                identity.textContent = 'loading';
+                a = 0;
+            }
+
+        }, 500)
+
+
+        const exp = document.getElementById('exp')
+        let x = 0;
+
+        setInterval(() => {
+            if (x < 4) {
+                exp.textContent = exp.textContent + '.';
+                x++;
+            }
+
+            else {
+                exp.textContent = 'LOADING';
+                x = 0;
+            }
+
+        }, 500)
+
+        const clrs = ["red", "blue", "green", "orange", "violet"];
+
+        index = 0;
+
+        const change = setInterval(() => {
+
+            document.body.style.backgroundColor = clrs[index]
+            index = (index + 1) % clrs.length
+
+
+        }, 1000)
+
+        // setTimeout(() => {
+        //     clearInterval(change)
+        // }, 10000)
+
+
+    </script>
+</body>
+
+</html>
